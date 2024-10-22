@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dongim Lee Portfolio Website">
+    <title>Dongim Lee Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('https://source.unsplash.com/1600x900/?abstract,technology') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .left-column, .right-column {
+            padding: 30px;
+        }
+
+        .left-column {
+            width: 20%;
+            background-color: rgba(0, 102, 153, 0.85);
+            color: #ffffff;
+        }
+
+        .right-column {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Profile Picture */
+        img.profile-pic {
+            border-radius: 50%;
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Text Styles */
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #2980b9;
+        }
+
+        h2 {
+            color: #e8f0fe;
+            font-size: 24px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin: 15px 0;
+            color: #2980b9;
+        }
+
+        p, ul {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Experience/Project Card */
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            width: calc(50% - 30px);
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            position: relative;
+        }
+
+        .card-header img {
+            width: 100%;
+            height: 150px; /* Adjusted to fit shorter card size */
+            object-fit: cover;
+        }
+
+        .card-header .tags {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #3498db;
+            color: white;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin: 5px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .card-body {
+            padding: 10px 15px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2980b9;
+            margin: 0;
+        }
+
+        .card-organization {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #777;
+        }
+
+        /* Content Section */
+        .content {
+            display: none;
+            padding: 15px;
+            background-color: rgba(236, 240, 241, 0.95);
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Info & Resume */
+        .contact-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: #e8f0fe;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .resume-link {
+            display: block;
+            text-align: center;
+            background-color: #ffffff;
+            color: #2980b9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resume-link:hover {
+            background-color: #f1f1f1;
+            color: #3498db;
+        }
+
+    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Dongim Lee</h1>
+
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <img src="img/test.JPG" alt="Dongim Lee's Photo" class="profile-pic">
+            <div class="contact-info">
+                1000 Olin Way, Needham, MA • +1-781-809-4715 • <a href="mailto:dlee3@olin.edu">dlee3@olin.edu</a> • <a href="https://linkedin.com/in/dongim">LinkedIn</a> • <a href="#">Website</a>
+            </div>
+
+            <h2>Education</h2>
+            <p><strong>Olin College of Engineering</strong></p>
+            <p>BS, Engineering Computing, Dec 2026</p>
+            <p>GPA: 3.93/4.0</p>
+
+            <h2>About Me</h2>
+            <p>I am passionate about machine learning and artificial intelligence, with a focus on developing innovative solutions in the fields of natural language processing, geospatial analysis, and autonomous systems.</p>
+
+            <h2>Skills</h2>
+            <ul class="skills">
+                <li><strong>Programming:</strong> Python, C/C++, R, MATLAB, HTML</li>
+                <li><strong>Machine Learning:</strong> PyTorch, TensorFlow, NLTK, OpenCV, Scikit-learn</li>
+                <li><strong>DevOps & Tools:</strong> AWS, Docker, VMware, PostgreSQL, Linux/Unix, Web Scraping, Django</li>
+                <li><strong>Hardware:</strong> Arduino, KiCad, SOLIDWORKS</li>
+            </ul>
+
+            <a href="your-resume.pdf" class="resume-link" download>Download My Resume</a>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+
+            <!-- Experience and Project Cards -->
+            <div class="card" onclick="toggleContent(this)">
+                <div class="card-header">
+                    <img src="img/test.JPG" alt="Project Image">
+                    <div class="tags">
+                        <div class="tag">LangChain</div>
+                        <div class="tag">Geospatial Data</div>
+                        <div class="tag">Streamlit</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">BREAK THROUGH TECH FELLOW</div>
+                    <div class="card-organization">MIT Break Through Tech, Michelin Mobility Intelligence</div>
+                </div>
+                <div class="content">
+                    <p>Dates: Mar 2024 - Present</p>
+                    <p>Goal: Develop a natural language interface for geospatial analysis of LA crash data.</p>
+                    <img src="img/test.JPG" alt="Related Project Image">
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleContent(this)">
+                <div class="card-header">
+                    <img src="img/test.JPG" alt="Project Image">
+                    <div class="tags">
+                        <div class="tag">ASR Models</div>
+                        <div class="tag">SageMaker</div>
+                        <div class="tag">LibriSpeech</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">STUTTERED SPEECH ASR MODEL TEAM LEAD</div>
+                    <div class="card-organization">Public Interest Technology at Olin College</div>
+                </div>
+                <div class="content">
+                    <p>Dates: Sep 2024 - Present</p>
+                    <p>Goal: Reduce bias in ASR models against stuttered speech.</p>
+                    <img src="img/test.JPG" alt="Related Project Image">
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleContent(this)">
+                <div class="card-header">
+                    <img src="img/test.JPG" alt="Project Image">
+                    <div class="tags">
+                        <div class="tag">Mandarin ASR</div>
+                        <div class="tag">Whisper</div>
+                        <div class="tag">Wav2Vec</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">NATURAL LANGUAGE PROCESSING RESEARCHER</div>
+                    <div class="card-organization">Boston University, AImpower.org</div>
+                </div>
+                <div class="content">
+                    <p>Dates: Jun 2024 - Jul 2024</p>
+                    <p>Goal: Assess bias in Mandarin speech recognition using top ASR models.</p>
+                    <img src="img/test.JPG" alt="Related Project Image">
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleContent(this)">
+                <div class="card-header">
+                    <img src="img/test.JPG" alt="Project Image">
+                    <div class="tags">
+                        <div class="tag">Social Media Analysis</div>
+                        <div class="tag">SQL</div>
+                        <div class="tag">Google Trends</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">POLITICAL DISCOURSE ANALYSIS ON SOCIAL MEDIA</div>
+                    <div class="card-organization">Wellesley College Credibility Lab</div>
+                </div>
+                <div class="content">
+                    <p>Dates: Sep 2024 - Present</p>
+                    <p>Goal: Analyze how political discourse spreads across social media platforms.</p>
+                    <img src="img/test.JPG" alt="Related Project Image">
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleContent(this)">
+                <div class="card-header">
+                    <img src="img/test.JPG" alt="Project Image">
+                    <div class="tags">
+                        <div class="tag">CNN</div>
+                        <div class="tag">Image Classification</div>
+                        <div class="tag">MidJourney</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">AI-GENERATED IMAGE CLASSIFICATION MODEL</div>
+                    <div class="card-organization">Personal Project</div>
+                </div>
+                <div class="content">
+                    <p>Dates: Oct 2024</p>
+                    <p>Goal: Build a deep learning model to classify AI-generated images from MidJourney.</p>
+                    <img src="img/test.JPG" alt="Related Project Image">
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleContent(this)">
+                <div class="card-header">
+                    <img src="img/test.JPG" alt="Project Image">
+                    <div class="tags">
+                        <div class="tag">VQGAN</div>
+                        <div class="tag">CLIP</div>
+                        <div class="tag">Calligraphy</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">AI CALLIGRAPHY GENERATOR</div>
+                    <div class="card-organization">Personal Project</div>
+                </div>
+                <div class="content">
+                    <p>Dates: Jul 2024 - Present</p>
+                    <p>Goal: Create a model to generate personalized English calligraphy using deep learning.</p>
+                    <img src="img/test.JPG" alt="Related Project Image">
+                </div>
+            </div>
+
+            <!-- Certificates -->
+            <div class="card" onclick="toggleContent(this)">
+                <div class="card-header">
+                    <img src="img/test.JPG" alt="Certificate Image">
+                    <div class="tags">
+                        <div class="tag">Machine Learning</div>
+                        <div class="tag">Cornell</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">MACHINE LEARNING FOUNDATIONS</div>
+                    <div class="card-organization">Cornell University, Jul 2024</div>
+                </div>
+                <div class="content">
+                    <img src="img/test.JPG" alt="Certificate Image">
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleContent(this)">
+                <div class="card-header">
+                    <img src="img/test.JPG" alt="Certificate Image">
+                    <div class="tags">
+                        <div class="tag">Deep Learning</div>
+                        <div class="tag">PyTorch</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">DEEP LEARNING WITH PYTORCH</div>
+                    <div class="card-organization">Coursera, Jun 2024</div>
+                </div>
+                <div class="content">
+                    <img src="img/test.JPG" alt="Certificate Image">
+                </div>
+            </div>
+
+            <div class="card" onclick="toggleContent(this)">
+                <div class="card-header">
+                    <img src="img/test.JPG" alt="Certificate Image">
+                    <div class="tags">
+                        <div class="tag">Machine Learning</div>
+                        <div class="tag">IBM</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">MACHINE LEARNING WITH PYTHON</div>
+                    <div class="card-organization">IBM, Dec 2023</div>
+                </div>
+                <div class="content">
+                    <img src="img/test.JPG" alt="Certificate Image">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(card) {
+            const content = card.querySelector('.content');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
