@@ -361,10 +361,12 @@
                 <div class="profile-name">Dongim Lee</div>
                 <div class="profile-info">A Computer Science student at Olin College of Engineering.</div>
                 <div class="social-icons">
-                    <a href="https://linkedin.com/in/dongim"><img src="icon/linkedin.png" alt="LinkedIn"></a>
-                    <a href="https://github.com/dongim04"><img src="icon/github.png" alt="Github"></a>
-                    <a href="#"><img src="icon/email.png" alt="Email"></a>
-                    <a href="https://dongim04.github.io/"><img src="icon/website.png" alt="Website"></a>
+                    <a href="https://linkedin.com/in/dongim" target="_blank"><img src="icon/linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://github.com/dongim04" target="_blank"><img src="icon/github.png" alt="Github"></a>
+                    <a href="#" onclick="copyEmail();">
+                        <img src="icon/email.png" alt="Email">
+                    </a>
+                    <a href="https://dongim04.github.io/" target="_blank"><img src="icon/website.png" alt="Website"></a>
                 </div>
             </div>
             <a href="pdf/Dongim_Lee_Resume.pdf" class="resume-link" target="_blank" download>My Resume</a>
@@ -424,8 +426,8 @@
                         <h4>MIT Break Through Tech, Michelin Mobility Intelligence</h4>
                         <p>Develop a natural language interface chatbot for geospatial analysis of LA crash data.</p>
                         <div class="project-links">
-                            <a href="#"><img src="icon/github-r.png" alt="GitHub"></a>
-                            <a href="#"><img src="icon/demo.png" alt="Live Demo"></a>
+                            <a href="#" target="_blank"><img src="icon/github-r.png" alt="GitHub"></a>
+                            <a href="#" target="_blank"><img src="icon/demo.png" alt="Live Demo"></a>
                         </div>
                     </div>
                     <div class="card-header">
@@ -458,8 +460,8 @@
                         <h4>Olin Public Interest Technology</h4>
                         <p>Fine-tune ASR models to reduce bias against stuttered speech.</p>
                         <div class="project-links">
-                            <a href="#"><img src="icon/github-r.png" alt="GitHub"></a>
-                            <a href="#"><img src="icon/demo.png" alt="Live Demo"></a>
+                            <a href="#" target="_blank"><img src="icon/github-r.png" alt="GitHub"></a>
+                            <a href="#" target="_blank"><img src="icon/demo.png" alt="Live Demo"></a>
                         </div>
                     </div>
                     <div class="card-header">
@@ -493,8 +495,8 @@
                         <h4>Boston University, AImpower.org</h4>
                         <p>Assess bias in Mandarin speech recognition using ASR models.</p>
                         <div class="project-links">
-                            <a href="#"><img src="icon/github-r.png" alt="GitHub"></a>
-                            <a href="#"><img src="icon/demo.png" alt="Live Demo"></a>
+                            <a href="#" target="_blank"><img src="icon/github-r.png" alt="GitHub"></a>
+                            <a href="#" target="_blank"><img src="icon/demo.png" alt="Live Demo"></a>
                         </div>
                     </div>
                     <div class="card-header">
@@ -535,8 +537,8 @@
                         <h4>Olin Autonomous Robot Training Lab</h4>
                         <p>Train an inverted pendulum robot to balance in the upright position.</p>
                         <div class="project-links">
-                            <a href="#"><img src="icon/github-r.png" alt="GitHub"></a>
-                            <a href="#"><img src="icon/demo.png" alt="Live Demo"></a>
+                            <a href="#" target="_blank"><img src="icon/github-r.png" alt="GitHub"></a>
+                            <a href="#" target="_blank"><img src="icon/demo.png" alt="Live Demo"></a>
                         </div>
                     </div>
                     <div class="card-header">
@@ -568,8 +570,8 @@
                         <h4>ML Class Project</h4>
                         <p>Build a deep learning model to classify AI-generated images from MidJourney.</p>
                         <div class="project-links">
-                            <a href="#"><img src="icon/github-r.png" alt="GitHub"></a>
-                            <a href="#"><img src="icon/demo.png" alt="Live Demo"></a>
+                            <a href="#" target="_blank"><img src="icon/github-r.png" alt="GitHub"></a>
+                            <a href="#" target="_blank"><img src="icon/demo.png" alt="Live Demo"></a>
                         </div>
                     </div>
                     <div class="card-header">
@@ -599,8 +601,8 @@
                         <h4>United Nations Development Programme</h4>
                         <p>Analyzed relationship between conflict events, refugees movements, and food insecurity in Sudan.</p>
                         <div class="project-links">
-                            <a href="#"><img src="icon/github-r.png" alt="GitHub"></a>
-                            <a href="#"><img src="icon/demo.png" alt="Live Demo"></a>
+                            <a href="#" target="_blank"><img src="icon/github-r.png" alt="GitHub"></a>
+                            <a href="#" target="_blank"><img src="icon/demo.png" alt="Live Demo"></a>
                         </div>
                     </div>
                     <div class="card-header">
@@ -679,6 +681,30 @@
             } else {
                 details.style.display = "block";
             }
+        }
+
+        function copyEmail() {
+            const email = "dlee3@olin.edu";
+            
+            // Create a temporary text area to hold the email
+            const tempInput = document.createElement("textarea");
+            tempInput.value = email;
+            
+            // Append it to the document
+            document.body.appendChild(tempInput);
+            
+            // Select the text in the text area
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+            
+            // Copy the text to the clipboard
+            document.execCommand("copy");
+            
+            // Remove the temporary text area
+            document.body.removeChild(tempInput);
+            
+            // Display an alert with the email
+            alert("Email copied to clipboard: " + email);
         }
     </script>
 </body>
