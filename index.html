@@ -115,20 +115,19 @@
             align-items: center;
             gap: 20px;
             padding-left: 20px;
-            background: rgba(240, 240, 240, 0.047); /* Slightly transparent */
+            background: rgba(240, 240, 240, 0.047);
             border-radius: 15px;
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: opacity 0.3s ease, background 0.3s ease; /* Smooth transition */
             opacity: 0.8; /* Set initial opacity */
+            cursor: pointer;
+            overflow: hidden;
         }
         
         .project:hover {
-            background: rgba(240, 240, 240, 0.173); /* Fully opaque background on hover */
+            background: rgba(240, 240, 240, 0.173);
         }
-        
-
-
 
         .project-content {
             flex: 1;
@@ -149,6 +148,32 @@
             margin-bottom: 10px;
         }
 
+        .project-details {
+            display: none;
+            padding: 10px;
+            margin-top: 0px; /* Add a margin to ensure space between the project and expanded content */
+            border-radius: 15px;
+            overflow: hidden;
+            order: 2;
+            gap: 0px;
+            padding-left: 0px;
+            background: none;
+            border: none;
+            margin-bottom: 0px;
+        }
+
+        .project-details img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+
+        .project-details p {
+            font-size: 1em;
+
+        }
+        
         .card-header {
             width: 300px;
             height: 300px;
@@ -172,6 +197,7 @@
             display: flex;
             flex-wrap: wrap;
         }
+        
 
         .tag {
             background-color: #3498db;
@@ -270,20 +296,6 @@
             margin-bottom: 10px;
         }
 
-        .design-thoughts {
-            background: #f0f0f0;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
-
-        .project-date {
-            font-size: 1em;
-            font-style: italic;
-            color: #888;
-            margin-top: 5px;
-        }
-
         .bounding-box {
             padding: 10px;
             background: #f0f0f0;
@@ -361,6 +373,7 @@
         <div class="content">
             <h1>HELLO!</h1>
             <p>My name is Dongim, passionate in data analysis and model training incorporating machine learning and AI, highly motivated by tackling real-world problems.</p>
+            <!-- I am passionate about machine learning and artificial intelligence, with a focus on developing innovative solutions in the fields of natural language processing, geospatial analysis, and autonomous systems. -->
             <!-- Stats Section -->
             <div class="stats">
                 <div class="stat-item">
@@ -405,47 +418,76 @@
             <div class="card">
                 <h2>PROJECTS</h2>
 
-                <div class="project">
+                <div class="project" onclick="toggleProjectDetails(this)">
                     <div class="project-content">
                         <h3 class="project-title">ROAD SAFETY INTELLIGENCE WITH AUGMENTED LLM</h3>
                         <h4>MIT Break Through Tech, Michelin Mobility Intelligence</h4>
-                        <p>Develop a natural language interface for geospatial analysis of LA crash data.</p>
+                        <p>Develop a natural language interface chatbot for geospatial analysis of LA crash data.</p>
                         <div class="project-links">
                             <a href="#"><img src="icon/github-r.png" alt="GitHub"></a>
                             <a href="#"><img src="icon/demo.png" alt="Live Demo"></a>
                         </div>
                     </div>
                     <div class="card-header">
-                        <img src="img/test.JPG" alt="Project Image">
+                        <img src="img/michelin/5.png" alt="Project Image">
                         <div class="tags">
                             <div class="tag">LangChain</div>
                             <div class="tag">Geospatial Analysis</div>
                             <div class="tag">Streamlit</div>
                         </div>
                     </div>
+                    <div class="project-details">
+                        <p> Developing a natural language interface for geospatial analysis of LA crash data, 
+                            utilizing LangChain for function calling, to handle complex queries within 
+                            the geospatial dataset.
+                            Performed exploratory data analysis (EDA) and integrated Points of Interest data 
+                            with crash data using Haversine formula for accurate distance calculations, 
+                            to enable automated spatial data extraction and analysis using LLMs.
+                            Developing a responsive interface using Streamlit, integrating users' real-time GPS, 
+                            to provide robust and interactive geospatial insights.</p>
+                        <img src="img/michelin/2.png" alt="Expanded Project Image">
+                        <img src="img/michelin/3.png" alt="Expanded Project Image">
+                        <img src="img/michelin/4.png" alt="Expanded Project Image">
+                        <img src="img/michelin/5.png" alt="Expanded Project Image">
+                    </div>
                 </div>
 
-                <div class="project">
+                <div class="project" onclick="toggleProjectDetails(this)">
                     <div class="project-content">
                         <h3 class="project-title">FINE-TUNING ASR MODELS ON STUTTERING RECORDINGS</h3>
                         <h4>Olin Public Interest Technology</h4>
-                        <p>Reduce bias in ASR models against stuttered speech.</p>
+                        <p>Fine-tune ASR models to reduce bias against stuttered speech.</p>
                         <div class="project-links">
                             <a href="#"><img src="icon/github-r.png" alt="GitHub"></a>
                             <a href="#"><img src="icon/demo.png" alt="Live Demo"></a>
                         </div>
                     </div>
                     <div class="card-header">
-                        <img src="img/test.JPG" alt="Project Image">
+                        <img src="img/pint/4.png" alt="Project Image">
                         <div class="tags">
                             <div class="tag">ASR Models</div>
                             <div class="tag">SageMaker</div>
                             <div class="tag">LibriSpeech</div>
                         </div>
                     </div>
+                    <div class="project-details">
+                        <p>Leading a team to address bias in Automatic Speech Recognition (ASR) models 
+                            against stuttered speech using LibriSpeech/Stutter data.
+                            Identified disparities in Word Error Rate (WER), with OpenAI’s Whisper 
+                            showing a 2x increase and Facebook’s Wav2Vec a 6.4x increase in transcribing 
+                            stuttered speech; Successfully reduced Whisper’s WER by 3% and Wav2Vec’s by 33% 
+                            by removing repeated words.
+                            Fine-tuned Wav2Vec on AWS SageMaker, built word tokenizers for 2268 characters 
+                            with Chinese stuttered speech, and uploaded the model to Hugging Face.</p>
+                        <img src="img/pint/1.png" alt="Expanded Project Image">
+                        <img src="img/pint/2.png" alt="Expanded Project Image">
+                        <img src="img/pint/3.png" alt="Expanded Project Image">
+                        <img src="img/pint/5.png" alt="Expanded Project Image">
+                        <img src="img/pint/4.png" alt="Expanded Project Image">
+                    </div>
                 </div>
 
-                <div class="project">
+                <div class="project" onclick="toggleProjectDetails(this)">
                     <div class="project-content">
                         <h3 class="project-title">BENCHMARKING STUTTERING RECORDINGS AGAINST ASR MODELS</h3>
                         <h4>Boston University, AImpower.org</h4>
@@ -456,16 +498,38 @@
                         </div>
                     </div>
                     <div class="card-header">
-                        <img src="img/test.JPG" alt="Project Image">
+                        <img src="img/aimpower/8.png" alt="Project Image">
                         <div class="tags">
                             <div class="tag">ASR Models</div>
                             <div class="tag">NLTK</div>
                             <div class="tag">Pydub</div>
                         </div>
                     </div>
+                    <div class="project-details">
+                        <p>Evaluated leading ASR models (Whisper, Google Speech-to-Text, Wav2Vec, Azure, WeNet) 
+                            to assess bias in recognizing Mandarin stuttered speech.
+                            Segmented 50+ hours of Mandarin speech data with labeled transcriptions 
+                            using Pydub, processed it on BU’s Shared Computing Cluster,
+                            addressed hallucinations, and calculated WER, CER, BLEU (NLTK), 
+                            WordNet Wu-Palmer Similarity, and GloVe Cosine Similarity.
+                            Demonstrated that more stutter segments lead to higher error rates, 
+                            with WeNet achieving a WER of 0.30, outperforming Wav2Vec's 0.52; 
+                            analyzed model performance across stutter types, revealing a 0.2 WER difference 
+                            between sound repetitions and interjections.
+                            Authored comprehensive reports explaining model performance and bias analysis, 
+                            including technical visualizations; Conducted weekly meetings and 
+                            presentations with the client company’s CEO.</p>
+                        <img src="img/aimpower/1.png" alt="Expanded Project Image">
+                        <img src="img/aimpower/2.png" alt="Expanded Project Image">
+                        <img src="img/aimpower/3.png" alt="Expanded Project Image">
+                        <img src="img/aimpower/4.png" alt="Expanded Project Image">
+                        <img src="img/aimpower/5.png" alt="Expanded Project Image">
+                        <img src="img/aimpower/6.png" alt="Expanded Project Image">
+                        <img src="img/aimpower/7.png" alt="Expanded Project Image">
+                    </div>
                 </div>
 
-                <div class="project">
+                <div class="project" onclick="toggleProjectDetails(this)">
                     <div class="project-content">
                         <h3 class="project-title">INVERTED PENDULUM ROBOT SIMULATION TEAM</h3>
                         <h4>Olin Autonomous Robot Training Lab</h4>
@@ -476,16 +540,29 @@
                         </div>
                     </div>
                     <div class="card-header">
-                        <img src="img/test.JPG" alt="Project Image">
+                        <img src="img/pendulum/5.jpg" alt="Project Image">
                         <div class="tags">
                             <div class="tag">Reinforcement Learning</div>
                             <div class="tag">W&B</div>
                             <div class="tag">Hyperparameter Sweeps</div>
                         </div>
                     </div>
+                    <div class="project-details">
+                        <p>Developed a custom Gym environment to train an inverted pendulum robot to balance
+                            in the upright position, featuring real-time simulation visualization.
+                            Applied the Proximal Policy Optimization reinforcement learning (RL) algorithm,
+                            performing hyperparameter sweeps (e.g., learning rate, reward function, entropy coefficient)
+                            to optimize model performance; Used Weights & Biases for machine learning experiment tracking.
+                            Successfully solved the CartPole swing-up problem, achieving stable balance in simulation
+                            through iterative RL training.</p>
+                        <img src="img/pendulum/1.png" alt="Expanded Project Image">
+                        <img src="img/pendulum/2.png" alt="Expanded Project Image">
+                        <img src="img/pendulum/3.png" alt="Expanded Project Image">
+                        <img src="img/pendulum/4.png" alt="Expanded Project Image">
+                    </div>
                 </div>
 
-                <div class="project">
+                <div class="project" onclick="toggleProjectDetails(this)">
                     <div class="project-content">
                         <h3 class="project-title">AI-GENERATED IMAGE CLASSIFICATION MODEL</h3>
                         <h4>ML Class Project</h4>
@@ -496,18 +573,29 @@
                         </div>
                     </div>
                     <div class="card-header">
-                        <img src="img/test.JPG" alt="Project Image">
+                        <img src="img/aigenimg/3.png" alt="Project Image">
                         <div class="tags">
                             <div class="tag">CNN</div>
                             <div class="tag">Image Classification</div>
                             <div class="tag">MidJourney</div>
                         </div>
                     </div>
+                    <div class="project-details">
+                        <p>Developed a deep learning model using CNNs to classify AI-generated images 
+                            from MidJourney against real images, with 11 classes. 
+                            Applied data augmentation techniques to enhance generalization, 
+                            with max-pooling layers to prevent overfitting.
+                            Achieved up to 80% accuracy on test data, demonstrating the model's capability 
+                            to distinguish between real and AI-generated images.</p>
+                        <img src="img/aigenimg/1.png" alt="Expanded Project Image">
+                        <img src="img/aigenimg/2.png" alt="Expanded Project Image">
+                        <img src="img/aigenimg/4.png" alt="Expanded Project Image">
+                    </div>
                 </div>
 
-                <div class="project">
+                <div class="project" onclick="toggleProjectDetails(this)">
                     <div class="project-content">
-                        <h3 class="project-title">FUNDP SUDAN 2024 CONFLICT EVENTS ANALYSIS</h3>
+                        <h3 class="project-title">UNDP SUDAN 2024 CONFLICT EVENTS ANALYSIS</h3>
                         <h4>United Nations Development Programme</h4>
                         <p>Analyzed relationship between conflict events, refugees movements, and food insecurity in Sudan.</p>
                         <div class="project-links">
@@ -516,12 +604,26 @@
                         </div>
                     </div>
                     <div class="card-header">
-                        <img src="img/test.JPG" alt="Project Image">
+                        <img src="img/undp/5.png" alt="Project Image">
                         <div class="tags">
                             <div class="tag">H3 Indexing</div>
                             <div class="tag">Confusion Matrix</div>
                             <div class="tag">Data Visualization</div>
                         </div>
+                    </div>
+                    <div class="project-details">
+                        <p>Analyzed and visualized the relationship between conflict events, refugees movements, 
+                            and food insecurity in Sudan from 2019 to 2024, using H3 hexagonal indexing 
+                            for geospatial data analysis, identifying conflict hotspots, trends, and 
+                            humanitarian impacts across regions.
+                            Calculated confusion matrices to reveal strong correlations between the variables. 
+                            (e.g., r=0.85 between conflict events and food insecurity levels by region indicates 
+                            that areas with higher conflict tend to experience more severe food insecurity.)</p>
+                        <img src="img/undp/1.png" alt="Expanded Project Image">
+                        <img src="img/undp/3.png" alt="Expanded Project Image">
+                        <img src="img/undp/4.png" alt="Expanded Project Image">
+                        <img src="img/undp/5.png" alt="Expanded Project Image">
+                        <img src="img/undp/2.png" alt="Expanded Project Image">
                     </div>
                 </div>
 
@@ -569,7 +671,15 @@
                 content.style.display = "block";
             }
         }
+        
+        function toggleProjectDetails(project) {
+            const details = project.querySelector('.project-details');
+            if (details.style.display === "block") {
+                details.style.display = "none";
+            } else {
+                details.style.display = "block";
+            }
+        }
     </script>
-
 </body>
 </html>
